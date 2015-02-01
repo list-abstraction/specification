@@ -2,7 +2,7 @@
 ====
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/aureooms/js-list-spec?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Doubly linked list code bricks for Javascript.
+List ADT specification code bricks for Javascript.
 
 [![NPM license](http://img.shields.io/npm/l/aureooms-js-list-spec.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-list-spec/master/LICENSE)
 [![NPM version](http://img.shields.io/npm/v/aureooms-js-list-spec.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-list-spec)
@@ -15,6 +15,11 @@ Doubly linked list code bricks for Javascript.
 [![NPM downloads per month](http://img.shields.io/npm/dm/aureooms-js-list-spec.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-list-spec)
 [![GitHub issues](http://img.shields.io/github/issues/aureooms/js-list-spec.svg?style=flat)](https://github.com/aureooms/js-list-spec/issues)
 
-***( forked from [js-data-structures](https://github.com/aureooms/js-data-structures) )***
+This repository provides easy methods to test the implementation of a list
+abstract data type. The specification of such a data type will be provided in
+[js-list-doc](http://aureooms.github.io/js-list-doc) later.
 
-***( forked from [js-dll](https://github.com/aureooms/js-dll) )***
+Currently, you can do the following to test your implementation,
+
+	var spec = require( "aureooms-js-list-spec" ) ;
+	spec.test( "My list implementation" , MyListConstructor ) ;
