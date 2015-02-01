@@ -3,7 +3,7 @@
 	"description": "Lists ADT specification code bricks for JavaScript",
 	"homepage": "http://aureooms.github.io/js-list-spec/",
 	"main": "js/dist/list-spec.js",
-	"version": "7.0.0",
+	"version": "8.0.0",
 	"repository": {
 		"url": "https://github.com/aureooms/js-list-spec.git",
 		"type": "git"
