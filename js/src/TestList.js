@@ -6,7 +6,7 @@
  * sake of simplicity.
  */
 
-var DoublyLinkedList = function(){
+var TestList = function(){
 	this.front = new Node(null, null, null);
 	this.back = new Node(this.front, null, null);
 	this.front.next = this.back;
@@ -31,7 +31,7 @@ var ReverseIterator = function(front, back, current){
 	this.current = current;
 };
 
-DoublyLinkedList.prototype.insertAfter = function(iterator, value){
+TestList.prototype.insertAfter = function(iterator, value){
 	var node, prev;
 
 	prev = iterator.current;
@@ -44,7 +44,7 @@ DoublyLinkedList.prototype.insertAfter = function(iterator, value){
 	return this.iterator(node);
 };
 
-DoublyLinkedList.prototype.insertBefore = function(iterator, value){
+TestList.prototype.insertBefore = function(iterator, value){
 	var node, next;
 
 	next = iterator.current;
@@ -57,15 +57,15 @@ DoublyLinkedList.prototype.insertBefore = function(iterator, value){
 	return this.iterator(node);
 };
 
-DoublyLinkedList.prototype.unshift = function(value){
+TestList.prototype.unshift = function(value){
 	return this.insertAfter(this.begin(), value);
 };
 
-DoublyLinkedList.prototype.push = function(value){
+TestList.prototype.push = function(value){
 	return this.insertBefore(this.end(), value);
 };
 
-DoublyLinkedList.prototype.erase = function(iterator){
+TestList.prototype.erase = function(iterator){
 	var node = iterator.current;
 
 	node.prev.next = node.next;
@@ -75,7 +75,7 @@ DoublyLinkedList.prototype.erase = function(iterator){
 	return this.iterator(node.next);
 };
 
-DoublyLinkedList.prototype.rerase = function(iterator){
+TestList.prototype.rerase = function(iterator){
 	var node = iterator.current;
 
 	node.next.prev = node.prev;
@@ -85,7 +85,7 @@ DoublyLinkedList.prototype.rerase = function(iterator){
 	return this.iterator(node.prev);
 };
 
-DoublyLinkedList.prototype.eraserange = function(first, last){
+TestList.prototype.eraserange = function(first, last){
 	var firstnode, lastnode, it;
 	firstnode = first.current;
 	lastnode = last.current;
@@ -102,7 +102,7 @@ DoublyLinkedList.prototype.eraserange = function(first, last){
 	return last.copy();
 };
 
-DoublyLinkedList.prototype.reraserange = function(first, last){
+TestList.prototype.reraserange = function(first, last){
 	var firstnode, lastnode, it;
 	firstnode = first.current;
 	lastnode = last.current;
@@ -119,7 +119,7 @@ DoublyLinkedList.prototype.reraserange = function(first, last){
 	return last.copy();
 };
 
-DoublyLinkedList.prototype.shift = function(){
+TestList.prototype.shift = function(){
 	var it = this.begin();
 	var e = it.next();
 
@@ -131,7 +131,7 @@ DoublyLinkedList.prototype.shift = function(){
 	return e.value;
 };
 
-DoublyLinkedList.prototype.pop = function(){
+TestList.prototype.pop = function(){
 	var it = this.rbegin();
 	var e = it.next();
 
@@ -143,34 +143,34 @@ DoublyLinkedList.prototype.pop = function(){
 	return e.value;
 };
 
-DoublyLinkedList.prototype.clear = function(){
+TestList.prototype.clear = function(){
 	this.front.next = this.back;
 	this.back.prev = this.front;
 	this.length = 0;
 	return this;
 };
 
-DoublyLinkedList.prototype.iterator = function(node){
+TestList.prototype.iterator = function(node){
 	return new Iterator(this.front, this.back, node);
 };
 
-DoublyLinkedList.prototype.riterator = function(node){
+TestList.prototype.riterator = function(node){
 	return new ReverseIterator(this.front, this.back, node);
 };
 
-DoublyLinkedList.prototype.begin = function(){
+TestList.prototype.begin = function(){
 	return this.iterator(this.front);
 };
 
-DoublyLinkedList.prototype.end = function(){
+TestList.prototype.end = function(){
 	return this.iterator(this.back);
 };
 
-DoublyLinkedList.prototype.rbegin = function(){
+TestList.prototype.rbegin = function(){
 	return this.riterator(this.back);
 };
 
-DoublyLinkedList.prototype.rend = function(){
+TestList.prototype.rend = function(){
 	return this.riterator(this.front);
 };
 
@@ -212,11 +212,11 @@ function(){
 	}
 };
 
-DoublyLinkedList.Node = Node;
-DoublyLinkedList.Iterator = Iterator;
-DoublyLinkedList.ReverseIterator = ReverseIterator;
+TestList.Node = Node;
+TestList.Iterator = Iterator;
+TestList.ReverseIterator = ReverseIterator;
 
 
-exports.DoublyLinkedList = DoublyLinkedList;
+exports.TestList = TestList;
 
 })();
