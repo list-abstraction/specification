@@ -1,10 +1,10 @@
 {
-	"homepage": "http://aureooms.github.io/js-dll/",
-	"name": "aureooms-js-dll",
+	"homepage": "http://aureooms.github.io/js-list-spec/",
+	"name": "aureooms-js-list-spec",
 	"license": "AGPL-3.0",
-	"description": "Doubly linked list code bricks for JavaScript",
+	"description": "Lists ADT specification code bricks for JavaScript",
 	"version": "6.0.1",
-	"main": "js/dist/dll.js",
+	"main": "js/dist/list-spec.js",
 	"ignore": [
 		"js/index.js",
 		"js/src",

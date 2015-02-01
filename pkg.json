@@ -1,10 +1,10 @@
 {
-	"name": "dll",
+	"name": "list-spec",
 	"code": {
 		"main": [
 			"js",
 			"dist",
-			"dll.js"
+			"list-spec.js"
 		],
 		"test": [
 			"test",

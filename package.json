@@ -1,22 +1,19 @@
 {
-	"name": "aureooms-js-dll",
-	"description": "Doubly linked list code bricks for JavaScript",
-	"homepage": "http://aureooms.github.io/js-dll/",
-	"main": "js/dist/dll.js",
+	"name": "aureooms-js-list-spec",
+	"description": "Lists ADT specification code bricks for JavaScript",
+	"homepage": "http://aureooms.github.io/js-list-spec/",
+	"main": "js/dist/list-spec.js",
 	"version": "6.0.1",
 	"repository": {
-		"url": "https://github.com/aureooms/js-dll.git",
+		"url": "https://github.com/aureooms/js-list-spec.git",
 		"type": "git"
 	},
 	"keywords": [
 		"bricks",
-		"data",
-		"dll",
-		"doubly linked list",
 		"javascript",
 		"js",
 		"list",
-		"structures"
+		"specification"
 	],
 	"scripts": {
 		"build": "./node_modules/.bin/aureooms-node-package-build",
@@ -28,7 +25,7 @@
 		"aureooms-node-package": "^2.0.2"
 	},
 	"bugs": {
-		"url": "https://github.com/aureooms/js-dll/issues"
+		"url": "https://github.com/aureooms/js-list-spec/issues"
 	},
 	"dependencies": {},
 	"license": "AGPL-3.0"
