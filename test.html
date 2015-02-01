@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="en"><head><title>test</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="test"><meta name="groc-project-path" content="js/src/test.js"><meta name="groc-github-url" content="https://github.com/aureooms/js-list-spec"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/aureooms/js-list-spec/blob/master/js/src/test.js">js/src/test.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">exports.test = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">( name , List )</span> </span>{
+
+	<span class="hljs-keyword">var</span> listToArrayForward = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(list)</span> </span>{
+		<span class="hljs-keyword">var</span> array = [];
+
+		<span class="hljs-keyword">var</span> it = list.begin();
+
+		<span class="hljs-keyword">var</span> e;
+
+		<span class="hljs-keyword">while</span> (!(e = it.next()).done){
+			array.push(e.value);
+		}
+
+		<span class="hljs-keyword">return</span> array;
+	} ;
+
+	<span class="hljs-keyword">var</span> listToArrayBackward = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(list)</span> </span>{
+		<span class="hljs-keyword">var</span> array = [];
+
+		<span class="hljs-keyword">var</span> it = list.rbegin();
+
+		<span class="hljs-keyword">var</span> e;
+
+		<span class="hljs-keyword">while</span> (!(e = it.next()).done){
+			array.push(e.value);
+		}
+
+		<span class="hljs-keyword">return</span> array;
+	} ;
+
+	test( name , <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">( )</span> </span>{
+
+		<span class="hljs-keyword">var</span> i, j, k, n, m, it, a, b, v, first, last;
+
+		<span class="hljs-keyword">var</span> list = <span class="hljs-keyword">new</span> List();
+
+		deepEqual(list.length, <span class="hljs-number">0</span>, <span class="hljs-string">"length is 0"</span>);
+
+
+		<span class="hljs-keyword">var</span> expectedArrayForward = [];
+		<span class="hljs-keyword">var</span> expectedArrayBackward = [];
+
+		<span class="hljs-keyword">var</span> arrayForward = [];
+		<span class="hljs-keyword">var</span> arrayBackward = [];
+
+		<span class="hljs-keyword">var</span> add20 = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+
+			n = <span class="hljs-number">10</span>;
+
+			<span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt;= n; ++i) {
+				list.push(i);
+				expectedArrayForward.push(i);
+				expectedArrayBackward.unshift(i);
+				deepEqual(list.length, i, <span class="hljs-string">"length is "</span> + i);
+
+				arrayForward = listToArrayForward(list);
+				arrayBackward = listToArrayBackward(list);
+
+				deepEqual(arrayForward, expectedArrayForward, <span class="hljs-string">"content is equal"</span>);
+				deepEqual(arrayBackward, expectedArrayBackward, <span class="hljs-string">"content is equal"</span>);
+			}
+
+			n = <span class="hljs-number">20</span>;
+
+			<span class="hljs-keyword">for</span> (; i &lt;= n; ++i) {
+				list.unshift(i);
+				expectedArrayForward.unshift(i);
+				expectedArrayBackward.push(i);
+				deepEqual(list.length, i, <span class="hljs-string">"length is "</span> + i);
+
+				arrayForward = listToArrayForward(list);
+				arrayBackward = listToArrayBackward(list);
+
+				deepEqual(arrayForward, expectedArrayForward, <span class="hljs-string">"content is equal"</span>);
+				deepEqual(arrayBackward, expectedArrayBackward, <span class="hljs-string">"content is equal"</span>);
+			}
+
+		};
+
+		<span class="hljs-keyword">var</span> del20 = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+
+			n = <span class="hljs-number">10</span>;
+
+			<span class="hljs-keyword">for</span> (i = <span class="hljs-number">20</span>; i &gt; n; --i) {
+				deepEqual(list.length, i, <span class="hljs-string">"length is "</span> + i);
+
+				v = list.pop();
+				a = expectedArrayForward.pop();
+				b = expectedArrayBackward.shift();
+				deepEqual(v, a, <span class="hljs-string">"popped value a === "</span> + a);
+				deepEqual(v, b, <span class="hljs-string">"popped value b === "</span> + a);
+
+				arrayForward = listToArrayForward(list);
+				arrayBackward = listToArrayBackward(list);
+
+				deepEqual(arrayForward, expectedArrayForward, <span class="hljs-string">"content is equal"</span>);
+				deepEqual(arrayBackward, expectedArrayBackward, <span class="hljs-string">"content is equal"</span>);
+			}
+
+			n = <span class="hljs-number">0</span>;
+
+			<span class="hljs-keyword">for</span> (; i &gt; n; --i) {
+				deepEqual(list.length, i, <span class="hljs-string">"length is "</span> + i);
+
+				v = list.shift();
+				a = expectedArrayForward.shift();
+				b = expectedArrayBackward.pop();
+				deepEqual(v, a, <span class="hljs-string">"shifted value a === "</span> + a);
+				deepEqual(v, b, <span class="hljs-string">"shifted value b === "</span> + a);
+
+				arrayForward = listToArrayForward(list);
+				arrayBackward = listToArrayBackward(list);
+
+				deepEqual(arrayForward, expectedArrayForward, <span class="hljs-string">"content is equal"</span>);
+				deepEqual(arrayBackward, expectedArrayBackward, <span class="hljs-string">"content is equal"</span>);
+			}
+		};
+
+		<span class="hljs-keyword">var</span> clear = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+			list.clear();
+			expectedArrayForward.splice(<span class="hljs-number">0</span>);
+			expectedArrayBackward.splice(<span class="hljs-number">0</span>);
+		};
+
+		clear();
+		add20();
+		del20();
+
+		deepEqual(list.length, <span class="hljs-number">0</span>, <span class="hljs-string">"length is 0"</span>);
+
+		v = list.shift();
+		deepEqual(v, <span class="hljs-literal">null</span>, <span class="hljs-string">"v === null"</span>);
+
+		v = list.pop();
+		deepEqual(v, <span class="hljs-literal">null</span>, <span class="hljs-string">"v === null"</span>);
+
+		deepEqual(list.length, <span class="hljs-number">0</span>, <span class="hljs-string">"length is 0"</span>);
+
+		clear();
+		add20();
+
+		clear();
+
+		deepEqual(list.length, <span class="hljs-number">0</span>, <span class="hljs-string">"length is 0"</span>);
+
+		arrayForward = listToArrayForward(list);
+		arrayBackward = listToArrayBackward(list);
+
+		deepEqual(arrayForward, expectedArrayForward, <span class="hljs-string">"content is equal"</span>);
+		deepEqual(arrayBackward, expectedArrayBackward, <span class="hljs-string">"content is equal"</span>);
+
+		clear();
+		add20();
+
+		first = list.begin();
+		last = list.end();
+		first.next();
+
+		list.eraserange(first, last);
+		expectedArrayForward.splice(<span class="hljs-number">0</span>);
+		expectedArrayBackward.splice(<span class="hljs-number">0</span>);
+
+		deepEqual(list.length, <span class="hljs-number">0</span>, <span class="hljs-string">"length is 0"</span>);
+
+		arrayForward = listToArrayForward(list);
+		arrayBackward = listToArrayBackward(list);
+
+		deepEqual(arrayForward, expectedArrayForward, <span class="hljs-string">"content is equal"</span>);
+		deepEqual(arrayBackward, expectedArrayBackward, <span class="hljs-string">"content is equal"</span>);
+
+		clear();
+		add20();
+
+		first = list.rbegin();
+		last = list.rend();
+		first.next();
+
+		list.reraserange(first, last);
+		expectedArrayForward.splice(<span class="hljs-number">0</span>);
+		expectedArrayBackward.splice(<span class="hljs-number">0</span>);
+
+		deepEqual(list.length, <span class="hljs-number">0</span>, <span class="hljs-string">"length is 0"</span>);
+
+		arrayForward = listToArrayForward(list);
+		arrayBackward = listToArrayBackward(list);
+
+		deepEqual(arrayForward, expectedArrayForward, <span class="hljs-string">"content is equal"</span>);
+		deepEqual(arrayBackward, expectedArrayBackward, <span class="hljs-string">"content is equal"</span>);
+
+
+		clear();
+		add20();
+
+		m = <span class="hljs-number">5</span>;
+
+		first = list.begin();
+		last = list.end();
+		first.next();
+		<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; m; ++i) {
+			first.next();
+			last.prev();
+		}
+
+		list.eraserange(first, last);
+		expectedArrayForward.splice(m, n - m - m);
+		expectedArrayBackward.splice(m, n - m - m);
+
+		deepEqual(list.length, expectedArrayForward.length, <span class="hljs-string">"length check"</span>);
+		deepEqual(list.length, expectedArrayBackward.length, <span class="hljs-string">"length check"</span>);
+
+		arrayForward = listToArrayForward(list);
+		arrayBackward = listToArrayBackward(list);
+
+		deepEqual(arrayForward, expectedArrayForward, <span class="hljs-string">"content is equal"</span>);
+		deepEqual(arrayBackward, expectedArrayBackward, <span class="hljs-string">"content is equal"</span>);
+
+		clear();
+		add20();
+
+		m = <span class="hljs-number">5</span>;
+
+		first = list.rbegin();
+		last = list.rend();
+		first.next();
+		<span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; m; ++i) {
+			first.next();
+			last.prev();
+		}
+
+		list.reraserange(first, last);
+		expectedArrayForward.splice(m, n - m - m);
+		expectedArrayBackward.splice(m, n - m - m);
+
+		deepEqual(list.length, expectedArrayForward.length, <span class="hljs-string">"length check"</span>);
+		deepEqual(list.length, expectedArrayBackward.length, <span class="hljs-string">"length check"</span>);
+
+		arrayForward = listToArrayForward(list);
+		arrayBackward = listToArrayBackward(list);
+
+		deepEqual(arrayForward, expectedArrayForward, <span class="hljs-string">"content is equal"</span>);
+		deepEqual(arrayBackward, expectedArrayBackward, <span class="hljs-string">"content is equal"</span>);
+	});
+
+} ;</div></div></div></div></body></html>
