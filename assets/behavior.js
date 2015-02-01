@@ -13,7 +13,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "commentsOnly": true,
           "name": "Markdown"
         },
-        "sourcePath": "/home/aureooms/dev/js/js-dll/README.md",
+        "sourcePath": "/home/aureooms/dev/js/js-list-spec/README.md",
         "projectPath": "README.md",
         "targetPath": "index",
         "pageTitle": "index",
@@ -33,7 +33,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
           "foldPrefix": "^",
           "name": "JavaScript"
         },
-        "sourcePath": "/home/aureooms/dev/js/js-dll/js/src/DoublyLinkedList.js",
+        "sourcePath": "/home/aureooms/dev/js/js-list-spec/js/src/DoublyLinkedList.js",
         "projectPath": "js/src/DoublyLinkedList.js",
         "targetPath": "DoublyLinkedList",
         "pageTitle": "DoublyLinkedList",
@@ -265,7 +265,7 @@ f.event={add:function(a,c,d,e,g){var h,i,j,k,l,m,n,o,p,q,r,s;if(!(a.nodeType===3
       if (metaInfo.documentPath === 'index') {
         sourceURL = metaInfo.githubURL;
       } else {
-        sourceURL = "" + metaInfo.githubURL + "/blob/master/" + metaInfo.projectPath;
+        sourceURL = metaInfo.githubURL + "/blob/master/" + metaInfo.projectPath;
       }
       nav$.find('.tools').prepend("<li class=\"github\">\n  <a href=\"" + sourceURL + "\" title=\"View source on GitHub\">\n    View source on GitHub\n  </a>\n</li>");
     }
