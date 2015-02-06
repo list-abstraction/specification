@@ -21,5 +21,7 @@ abstract data type. The specification of such a data type will be provided in
 
 Currently, you can do the following to test your implementation,
 
-	var spec = require( "aureooms-js-list-spec" ) ;
-	spec.test( "My list implementation" , MyListConstructor ) ;
+```javascript
+var spec = require( "aureooms-js-list-spec" ) ;
+spec.test( "My list implementation" , MyListConstructor ) ;
+```
