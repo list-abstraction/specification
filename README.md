@@ -14,6 +14,7 @@ List ADT specification code bricks for Javascript.
 [![Code Climate](http://img.shields.io/codeclimate/github/aureooms/js-list-spec.svg?style=flat)](https://codeclimate.com/github/aureooms/js-list-spec)
 [![NPM downloads per month](http://img.shields.io/npm/dm/aureooms-js-list-spec.svg?style=flat)](https://www.npmjs.org/package/aureooms-js-list-spec)
 [![GitHub issues](http://img.shields.io/github/issues/aureooms/js-list-spec.svg?style=flat)](https://github.com/aureooms/js-list-spec/issues)
+[![Inline docs](http://inch-ci.org/github/aureooms/js-list-spec.svg?branch=master&style=shields)](http://inch-ci.org/github/aureooms/js-list-spec)
 
 This repository provides easy methods to test the implementation of a list
 abstract data type. The specification of such a data type will be provided in
