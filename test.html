@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><title>test</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="test"><meta name="groc-project-path" content="js/src/test.js"><meta name="groc-github-url" content="https://github.com/aureooms/js-list-spec"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/aureooms/js-list-spec/blob/master/js/src/test.js">js/src/test.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">exports.test = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">( name , List )</span> </span>{
+<!DOCTYPE html><html lang="en"><head><title>test</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="test"><meta name="groc-project-path" content="js/src/test.js"><meta name="groc-github-url" content="https://github.com/aureooms/js-list-spec"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><script type="text/javascript" src="assets/behavior.js"></script><body><div id="meta"><div class="file-path"><a href="https://github.com/aureooms/js-list-spec/blob/master/js/src/test.js">js/src/test.js</a></div></div><div id="document"><div class="segment"><div class="code"><div class="wrapper">exports.test = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> name , List </span>) </span>{
 
-	<span class="hljs-keyword">var</span> listToArrayForward = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(list)</span> </span>{
+	<span class="hljs-keyword">var</span> listToArrayForward = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">list</span>) </span>{
 		<span class="hljs-keyword">var</span> array = [];
 
 		<span class="hljs-keyword">var</span> it = list.begin();
@@ -14,7 +14,7 @@
 		<span class="hljs-keyword">return</span> array;
 	} ;
 
-	<span class="hljs-keyword">var</span> listToArrayBackward = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(list)</span> </span>{
+	<span class="hljs-keyword">var</span> listToArrayBackward = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">list</span>) </span>{
 		<span class="hljs-keyword">var</span> array = [];
 
 		<span class="hljs-keyword">var</span> it = list.rbegin();
@@ -28,7 +28,7 @@
 		<span class="hljs-keyword">return</span> array;
 	} ;
 
-	test( name , <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">( )</span> </span>{
+	test( name , <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> </span>) </span>{
 
 		<span class="hljs-keyword">var</span> i, j, k, n, m, it, a, b, v, first, last;
 
@@ -43,7 +43,7 @@
 		<span class="hljs-keyword">var</span> arrayForward = [];
 		<span class="hljs-keyword">var</span> arrayBackward = [];
 
-		<span class="hljs-keyword">var</span> add20 = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+		<span class="hljs-keyword">var</span> add20 = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
 
 			n = <span class="hljs-number">10</span>;
 
@@ -77,7 +77,7 @@
 
 		};
 
-		<span class="hljs-keyword">var</span> del20 = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+		<span class="hljs-keyword">var</span> del20 = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
 
 			n = <span class="hljs-number">10</span>;
 
@@ -116,7 +116,7 @@
 			}
 		};
 
-		<span class="hljs-keyword">var</span> clear = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+		<span class="hljs-keyword">var</span> clear = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
 			list.clear();
 			expectedArrayForward.splice(<span class="hljs-number">0</span>);
 			expectedArrayBackward.splice(<span class="hljs-number">0</span>);
