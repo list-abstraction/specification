@@ -1,6 +1,8 @@
-(function(exports, undefined){
+( function ( ) {
 
-	'use strict';
+'use strict' ;
+
+var definition = function ( exports , undefined ) {
 
 
 /* js/src/TestList.js */
@@ -475,4 +477,16 @@ exports.test = function ( name , List ) {
 
 } ;
 
-})(typeof exports === 'undefined' ? this['listspec'] = {} : exports);
+return exports ;
+} ;
+if ( typeof exports === "object" ) {
+	definition( exports ) ;
+}
+else if ( typeof define === "function" && define.amd ) {
+	define( "aureooms-js-list-spec" , [ ] , function ( ) { return definition( { } ) ; } ) ;
+}
+else if ( typeof window === "object" && typeof window.document === "object" ) {
+	definition( window["listspec"] = { } ) ;
+}
+else console.error( "unable to detect type of module to define for aureooms-js-list-spec") ;
+} )( ) ;
