@@ -22,7 +22,7 @@
 	},
 	"author": "aureooms",
 	"devDependencies": {
-		"aureooms-node-package": "^2.0.2"
+		"aureooms-node-package": "^4.2.5"
 	},
 	"bugs": {
 		"url": "https://github.com/aureooms/js-list-spec/issues"
