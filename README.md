@@ -8,7 +8,7 @@ List ADT specification code bricks for Javascript. Parent is
 listspec.test( "My list implementation" , MyListConstructor ) ;
 ```
 
-[![NPM license](https://img.shields.io/npm/l/@aureooms/js-list-spec.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-list-spec/master/LICENSE)
+[![License](https://img.shields.io/github/license/aureooms/js-list-spec.svg?style=flat)](https://raw.githubusercontent.com/aureooms/js-list-spec/master/LICENSE)
 [![NPM version](https://img.shields.io/npm/v/@aureooms/js-list-spec.svg?style=flat)](https://www.npmjs.org/package/@aureooms/js-list-spec)
 [![Bower version](https://img.shields.io/bower/v/@aureooms/js-list-spec.svg?style=flat)](http://bower.io/search/?q=@aureooms/js-list-spec)
 [![Build Status](https://img.shields.io/travis/aureooms/js-list-spec.svg?style=flat)](https://travis-ci.org/aureooms/js-list-spec)
