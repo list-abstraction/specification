@@ -483,10 +483,10 @@ if ( typeof exports === "object" ) {
 	definition( exports ) ;
 }
 else if ( typeof define === "function" && define.amd ) {
-	define( "aureooms-js-list-spec" , [ ] , function ( ) { return definition( { } ) ; } ) ;
+	define( "@aureooms/js-list-spec" , [ ] , function ( ) { return definition( { } ) ; } ) ;
 }
 else if ( typeof window === "object" && typeof window.document === "object" ) {
 	definition( window["listspec"] = { } ) ;
 }
-else console.error( "unable to detect type of module to define for aureooms-js-list-spec") ;
+else console.error( "unable to detect type of module to define for @aureooms/js-list-spec") ;
 } )( ) ;
