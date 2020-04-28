@@ -2,7 +2,7 @@
   "name": "@aureooms/js-list-spec",
   "description": "List ADT specification code bricks for JavaScript",
   "homepage": "http://aureooms.github.io/js-list-spec/",
-  "main": "js/dist/list-spec.js",
+  "main": "lib/index.js",
   "version": "8.0.3",
   "repository": {
     "url": "https://github.com/aureooms/js-list-spec.git",
@@ -16,7 +16,7 @@
     "specification"
   ],
   "scripts": {
-    "build": "./node_modules/.bin/aureooms-node-package-build",
+    "build": "rm -rf lib && babel src -d lib",
     "test": "ava",
     "esdoc": "esdoc"
   },
