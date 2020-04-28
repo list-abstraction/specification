@@ -1,4 +1,4 @@
-import test from 'ava';
-import * as listspec from '../../src';
+import ava from 'ava';
+import * as spec from '../../src';
 
-listspec.test( "TestList" , listspec.TestList ) ;
+spec.test( ava , "TestList" , spec.TestList ) ;
