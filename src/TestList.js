@@ -6,30 +6,30 @@
  * sake of simplicity.
  */
 
-var TestList = function(){
+export function TestList(){
 	this.front = new Node(null, null, null);
 	this.back = new Node(this.front, null, null);
 	this.front.next = this.back;
 	this.length = 0;
-};
+}
 
-var Node = function(prev, next, value){
+export function Node(prev, next, value){
 	this.prev = prev;
 	this.next = next;
 	this.value = value;
-};
+}
 
-var Iterator = function(front, back, current){
+export function Iterator(front, back, current){
 	this.front = front;
 	this.back = back;
 	this.current = current;
-};
+}
 
-var ReverseIterator = function(front, back, current){
+export function ReverseIterator(front, back, current){
 	this.front = front;
 	this.back = back;
 	this.current = current;
-};
+}
 
 TestList.prototype.insertAfter = function(iterator, value){
 	var node, prev;
@@ -42,7 +42,7 @@ TestList.prototype.insertAfter = function(iterator, value){
 
 	++this.length;
 	return this.iterator(node);
-};
+}
 
 TestList.prototype.insertBefore = function(iterator, value){
 	var node, next;
@@ -55,15 +55,15 @@ TestList.prototype.insertBefore = function(iterator, value){
 
 	++this.length;
 	return this.iterator(node);
-};
+}
 
 TestList.prototype.unshift = function(value){
 	return this.insertAfter(this.begin(), value);
-};
+}
 
 TestList.prototype.push = function(value){
 	return this.insertBefore(this.end(), value);
-};
+}
 
 TestList.prototype.erase = function(iterator){
 	var node = iterator.current;
@@ -73,7 +73,7 @@ TestList.prototype.erase = function(iterator){
 
 	--this.length;
 	return this.iterator(node.next);
-};
+}
 
 TestList.prototype.rerase = function(iterator){
 	var node = iterator.current;
@@ -83,7 +83,7 @@ TestList.prototype.rerase = function(iterator){
 
 	--this.length;
 	return this.iterator(node.prev);
-};
+}
 
 TestList.prototype.eraserange = function(first, last){
 	var firstnode, lastnode, it;
@@ -100,7 +100,7 @@ TestList.prototype.eraserange = function(first, last){
 		it.next();
 	}
 	return last.copy();
-};
+}
 
 TestList.prototype.reraserange = function(first, last){
 	var firstnode, lastnode, it;
@@ -117,7 +117,7 @@ TestList.prototype.reraserange = function(first, last){
 		it.next();
 	}
 	return last.copy();
-};
+}
 
 TestList.prototype.shift = function(){
 	var it = this.begin();
@@ -129,7 +129,7 @@ TestList.prototype.shift = function(){
 
 	this.rerase(it);
 	return e.value;
-};
+}
 
 TestList.prototype.pop = function(){
 	var it = this.rbegin();
@@ -141,46 +141,46 @@ TestList.prototype.pop = function(){
 
 	this.erase(it);
 	return e.value;
-};
+}
 
 TestList.prototype.clear = function(){
 	this.front.next = this.back;
 	this.back.prev = this.front;
 	this.length = 0;
 	return this;
-};
+}
 
 TestList.prototype.iterator = function(node){
 	return new Iterator(this.front, this.back, node);
-};
+}
 
 TestList.prototype.riterator = function(node){
 	return new ReverseIterator(this.front, this.back, node);
-};
+}
 
 TestList.prototype.begin = function(){
 	return this.iterator(this.front);
-};
+}
 
 TestList.prototype.end = function(){
 	return this.iterator(this.back);
-};
+}
 
 TestList.prototype.rbegin = function(){
 	return this.riterator(this.back);
-};
+}
 
 TestList.prototype.rend = function(){
 	return this.riterator(this.front);
-};
+}
 
 Iterator.prototype.copy = function() {
 	return new Iterator(this.front, this.back, this.current);
-};
+}
 
 ReverseIterator.prototype.copy = function() {
 	return new ReverseIterator(this.front, this.back, this.current);
-};
+}
 
 Iterator.prototype.next =
 ReverseIterator.prototype.prev =
@@ -195,7 +195,7 @@ function(){
 			done : false
 		};
 	}
-};
+}
 
 Iterator.prototype.prev =
 ReverseIterator.prototype.next =
@@ -210,13 +210,12 @@ function(){
 			done : false
 		};
 	}
-};
+}
 
 TestList.Node = Node;
 TestList.Iterator = Iterator;
 TestList.ReverseIterator = ReverseIterator;
 
 
-exports.TestList = TestList;
 
 })();

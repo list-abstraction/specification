@@ -1,6 +1,5 @@
 
 
-exports.test = function ( name , List ) {
 
 	var listToArrayForward = function (list) {
 		var array = [];
@@ -243,4 +242,4 @@ exports.test = function ( name , List ) {
 		deepEqual(arrayBackward, expectedArrayBackward, "content is equal");
 	});
 
-} ;
+}
