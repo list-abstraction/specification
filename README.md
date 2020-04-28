@@ -5,7 +5,7 @@ List ADT specification code bricks for Javascript. Parent is
 [aureooms/js-data-structures](https://github.com/aureooms/js-data-structures).
 
 ```js
-listspec.test( "My list implementation" , MyListConstructor ) ;
+spec.test( ava , "My list implementation" , MyListConstructor ) ;
 ```
 
 [![License](https://img.shields.io/github/license/aureooms/js-list-spec.svg)](https://raw.githubusercontent.com/aureooms/js-list-spec/master/LICENSE)
@@ -22,18 +22,3 @@ listspec.test( "My list implementation" , MyListConstructor ) ;
 [![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-list-spec.svg)](https://codeclimate.com/github/aureooms/js-list-spec/trends/technical_debt)
 [![Documentation](https://aureooms.github.io/js-list-spec//badge.svg)](https://aureooms.github.io/js-list-spec//source.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-list-spec)](https://bundlephobia.com/result?p=@aureooms/js-list-spec)
-
-## Description
-
-This repository provides easy methods to test the implementation of a list
-abstract data type. The specification of such a data type will be provided in
-[@aureooms/js-list-doc](https://aureooms.github.io/js-list-doc) later.
-
-## Use
-
-Currently, you can do the following to test your implementation:
-
-```javascript
-let spec = require( "@aureooms/js-list-spec" ) ;
-spec.test( "My list implementation" , MyListConstructor ) ;
-```
