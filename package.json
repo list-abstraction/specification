@@ -1,7 +1,7 @@
 {
   "name": "@aureooms/js-list-spec",
   "description": "List ADT specification code bricks for JavaScript",
-  "version": "9.0.0",
+  "version": "9.0.1",
   "author": "aureooms",
   "ava": {
     "files": [
