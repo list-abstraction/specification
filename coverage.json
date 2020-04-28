@@ -1,0 +1,42 @@
+{
+  "coverage": "4.16%",
+  "expectCount": 24,
+  "actualCount": 1,
+  "files": {
+    "src/TestList.js": {
+      "expectCount": 23,
+      "actualCount": 1,
+      "undocumentLines": [
+        14,
+        20,
+        26,
+        32,
+        45,
+        58,
+        62,
+        66,
+        76,
+        86,
+        103,
+        120,
+        132,
+        144,
+        151,
+        155,
+        159,
+        163,
+        167,
+        171,
+        175,
+        179
+      ]
+    },
+    "src/test.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        1
+      ]
+    }
+  }
+}

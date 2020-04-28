@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../">
+  <title data-ice="title">src/test.js | @aureooms/js-list-spec</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="List ADT specification code bricks for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-list-spec"><meta property="twitter:description" content="List ADT specification code bricks for JavaScript"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  <a href="test.html" data-ice="testLink">Test</a>
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-list-spec.git"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Iterator">Iterator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-Node">Node</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-ReverseIterator">ReverseIterator</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-TestList">TestList</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-test">test</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">src/test.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export function test ( _test , name , List ) {
+
+	var listToArrayForward = function (list) {
+		var array = [];
+
+		var it = list.begin();
+
+		var e;
+
+		while (!(e = it.next()).done){
+			array.push(e.value);
+		}
+
+		return array;
+	} ;
+
+	var listToArrayBackward = function (list) {
+		var array = [];
+
+		var it = list.rbegin();
+
+		var e;
+
+		while (!(e = it.next()).done){
+			array.push(e.value);
+		}
+
+		return array;
+	} ;
+
+	_test( name , t =&gt; {
+
+		var i, j, k, n, m, it, a, b, v, first, last;
+
+		var list = new List();
+
+		t.deepEqual(list.length, 0, &quot;length is 0&quot;);
+
+
+		var expectedArrayForward = [];
+		var expectedArrayBackward = [];
+
+		var arrayForward = [];
+		var arrayBackward = [];
+
+		var add20 = function(){
+
+			n = 10;
+
+			for (i = 1; i &lt;= n; ++i) {
+				list.push(i);
+				expectedArrayForward.push(i);
+				expectedArrayBackward.unshift(i);
+				t.deepEqual(list.length, i, &quot;length is &quot; + i);
+
+				arrayForward = listToArrayForward(list);
+				arrayBackward = listToArrayBackward(list);
+
+				t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
+				t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
+			}
+
+			n = 20;
+
+			for (; i &lt;= n; ++i) {
+				list.unshift(i);
+				expectedArrayForward.unshift(i);
+				expectedArrayBackward.push(i);
+				t.deepEqual(list.length, i, &quot;length is &quot; + i);
+
+				arrayForward = listToArrayForward(list);
+				arrayBackward = listToArrayBackward(list);
+
+				t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
+				t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
+			}
+
+		};
+
+		var del20 = function(){
+
+			n = 10;
+
+			for (i = 20; i &gt; n; --i) {
+				t.deepEqual(list.length, i, &quot;length is &quot; + i);
+
+				v = list.pop();
+				a = expectedArrayForward.pop();
+				b = expectedArrayBackward.shift();
+				t.deepEqual(v, a, &quot;popped value a === &quot; + a);
+				t.deepEqual(v, b, &quot;popped value b === &quot; + a);
+
+				arrayForward = listToArrayForward(list);
+				arrayBackward = listToArrayBackward(list);
+
+				t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
+				t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
+			}
+
+			n = 0;
+
+			for (; i &gt; n; --i) {
+				t.deepEqual(list.length, i, &quot;length is &quot; + i);
+
+				v = list.shift();
+				a = expectedArrayForward.shift();
+				b = expectedArrayBackward.pop();
+				t.deepEqual(v, a, &quot;shifted value a === &quot; + a);
+				t.deepEqual(v, b, &quot;shifted value b === &quot; + a);
+
+				arrayForward = listToArrayForward(list);
+				arrayBackward = listToArrayBackward(list);
+
+				t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
+				t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
+			}
+		};
+
+		var clear = function(){
+			list.clear();
+			expectedArrayForward.splice(0);
+			expectedArrayBackward.splice(0);
+		};
+
+		clear();
+		add20();
+		del20();
+
+		t.deepEqual(list.length, 0, &quot;length is 0&quot;);
+
+		v = list.shift();
+		t.deepEqual(v, null, &quot;v === null&quot;);
+
+		v = list.pop();
+		t.deepEqual(v, null, &quot;v === null&quot;);
+
+		t.deepEqual(list.length, 0, &quot;length is 0&quot;);
+
+		clear();
+		add20();
+
+		clear();
+
+		t.deepEqual(list.length, 0, &quot;length is 0&quot;);
+
+		arrayForward = listToArrayForward(list);
+		arrayBackward = listToArrayBackward(list);
+
+		t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
+		t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
+
+		clear();
+		add20();
+
+		first = list.begin();
+		last = list.end();
+		first.next();
+
+		list.eraserange(first, last);
+		expectedArrayForward.splice(0);
+		expectedArrayBackward.splice(0);
+
+		t.deepEqual(list.length, 0, &quot;length is 0&quot;);
+
+		arrayForward = listToArrayForward(list);
+		arrayBackward = listToArrayBackward(list);
+
+		t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
+		t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
+
+		clear();
+		add20();
+
+		first = list.rbegin();
+		last = list.rend();
+		first.next();
+
+		list.reraserange(first, last);
+		expectedArrayForward.splice(0);
+		expectedArrayBackward.splice(0);
+
+		t.deepEqual(list.length, 0, &quot;length is 0&quot;);
+
+		arrayForward = listToArrayForward(list);
+		arrayBackward = listToArrayBackward(list);
+
+		t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
+		t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
+
+
+		clear();
+		add20();
+
+		m = 5;
+
+		first = list.begin();
+		last = list.end();
+		first.next();
+		for (i = 0; i &lt; m; ++i) {
+			first.next();
+			last.prev();
+		}
+
+		list.eraserange(first, last);
+		expectedArrayForward.splice(m, n - m - m);
+		expectedArrayBackward.splice(m, n - m - m);
+
+		t.deepEqual(list.length, expectedArrayForward.length, &quot;length check&quot;);
+		t.deepEqual(list.length, expectedArrayBackward.length, &quot;length check&quot;);
+
+		arrayForward = listToArrayForward(list);
+		arrayBackward = listToArrayBackward(list);
+
+		t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
+		t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
+
+		clear();
+		add20();
+
+		m = 5;
+
+		first = list.rbegin();
+		last = list.rend();
+		first.next();
+		for (i = 0; i &lt; m; ++i) {
+			first.next();
+			last.prev();
+		}
+
+		list.reraserange(first, last);
+		expectedArrayForward.splice(m, n - m - m);
+		expectedArrayBackward.splice(m, n - m - m);
+
+		t.deepEqual(list.length, expectedArrayForward.length, &quot;length check&quot;);
+		t.deepEqual(list.length, expectedArrayBackward.length, &quot;length check&quot;);
+
+		arrayForward = listToArrayForward(list);
+		arrayBackward = listToArrayBackward(list);
+
+		t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
+		t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
+	});
+
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
