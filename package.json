@@ -41,5 +41,18 @@
     "url": "https://github.com/aureooms/js-list-spec/issues"
   },
   "dependencies": {},
-  "license": "AGPL-3.0"
+  "license": "AGPL-3.0",
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-async-generator-functions"
+    ],
+    "env": {
+      "development": {
+        "sourceMaps": "inline"
+      }
+    }
+  }
 }
