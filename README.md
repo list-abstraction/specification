@@ -1,4 +1,4 @@
-[js-list-spec](http://aureooms.github.io/js-list-spec)
+[@aureooms/js-list-spec](https://aureooms.github.io/js-list-spec)
 ==
 
 List ADT specification code bricks for Javascript. Parent is
@@ -24,7 +24,7 @@ listspec.test( "My list implementation" , MyListConstructor ) ;
 
 This repository provides easy methods to test the implementation of a list
 abstract data type. The specification of such a data type will be provided in
-[js-list-doc](http://aureooms.github.io/js-list-doc) later.
+[@aureooms/js-list-doc](https://aureooms.github.io/js-list-doc) later.
 
 ## Use
 
