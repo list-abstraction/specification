@@ -1,2 +1,2 @@
-export * from './TestList.js' ;
-export * from './test.js' ;
+export * from './TestList.js';
+export * from './test.js';
