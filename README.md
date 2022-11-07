@@ -19,5 +19,5 @@ spec.test( ava , "My list implementation" , MyListConstructor ) ;
 [![Code maintainability](https://img.shields.io/codeclimate/maintainability/make-github-pseudonymous-again/js-list-spec.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-list-spec/trends/churn)
 [![Code coverage (cov)](https://img.shields.io/codecov/c/gh/make-github-pseudonymous-again/js-list-spec/main.svg)](https://codecov.io/gh/make-github-pseudonymous-again/js-list-spec)
 [![Code technical debt](https://img.shields.io/codeclimate/tech-debt/make-github-pseudonymous-again/js-list-spec.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-list-spec/trends/technical_debt)
-[![Documentation](https://make-github-pseudonymous-again.github.io/js-list-spec//badge.svg)](https://make-github-pseudonymous-again.github.io/js-list-spec//source.html)
+[![Documentation](https://make-github-pseudonymous-again.github.io/js-list-spec/badge.svg)](https://make-github-pseudonymous-again.github.io/js-list-spec/source.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-list-spec)](https://bundlephobia.com/result?p=@aureooms/js-list-spec)
