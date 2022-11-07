@@ -1,7 +1,7 @@
 {
   "name": "@list-abstraction/specification",
   "description": "List ADT specification code bricks for JavaScript",
-  "version": "9.0.1",
+  "version": "10.0.0",
   "license": "AGPL-3.0",
   "author": "make-github-pseudonymous-again",
   "homepage": "https://list-abstraction.github.io/specification",
