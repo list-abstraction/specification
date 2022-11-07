@@ -11,8 +11,7 @@ spec.test( ava , "My list implementation" , MyListConstructor ) ;
 [![License](https://img.shields.io/github/license/make-github-pseudonymous-again/js-list-spec.svg)](https://raw.githubusercontent.com/make-github-pseudonymous-again/js-list-spec/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@aureooms/js-list-spec.svg)](https://www.npmjs.org/package/@aureooms/js-list-spec)
 [![Build](https://img.shields.io/travis/make-github-pseudonymous-again/js-list-spec/main.svg)](https://travis-ci.org/make-github-pseudonymous-again/js-list-spec/branches)
-[![Dependencies](https://img.shields.io/david/make-github-pseudonymous-again/js-list-spec.svg)](https://david-dm.org/make-github-pseudonymous-again/js-list-spec)
-[![Dev dependencies](https://img.shields.io/david/dev/make-github-pseudonymous-again/js-list-spec.svg)](https://david-dm.org/make-github-pseudonymous-again/js-list-spec?type=dev)
+[![Dependencies](https://img.shields.io/librariesio/github/make-github-pseudonymous-again/js-list-spec.svg)](https://github.com/make-github-pseudonymous-again/js-list-spec/network/dependencies)
 [![GitHub issues](https://img.shields.io/github/issues/make-github-pseudonymous-again/js-list-spec.svg)](https://github.com/make-github-pseudonymous-again/js-list-spec/issues)
 [![Downloads](https://img.shields.io/npm/dm/@aureooms/js-list-spec.svg)](https://www.npmjs.org/package/@aureooms/js-list-spec)
 
