@@ -66,10 +66,10 @@
     "@babel/plugin-transform-destructuring": "7.20.2",
     "@babel/plugin-transform-for-of": "7.18.8",
     "@babel/preset-env": "7.9.5",
-    "@babel/register": "7.9.0",
     "@commitlint/cli": "17.2.0",
     "@js-library/commitlint-config": "0.0.4",
-    "ava": "3.8.1",
+    "@node-loader/babel": "2.0.1",
+    "ava": "4.3.3",
     "babel-plugin-transform-remove-console": "6.9.4",
     "babel-plugin-unassert": "3.2.0",
     "babel-preset-power-assert": "3.0.0",
@@ -92,22 +92,16 @@
     "files": [
       "test/src/**/*"
     ],
+    "nodeArguments": [
+      "--experimental-loader=@node-loader/babel"
+    ],
     "require": [
-      "regenerator-runtime/runtime",
-      "@babel/register"
+      "regenerator-runtime/runtime"
     ],
     "timeout": "1m"
   },
   "babel": {
     "sourceMaps": true,
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": "current node"
-        }
-      ]
-    ],
     "plugins": [
       "@babel/plugin-proposal-async-generator-functions",
       [
