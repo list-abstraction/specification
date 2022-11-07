@@ -1,18 +1,8 @@
 # Usage
 
-> :warning: The code needs a ES2015+ polyfill to run (`regeneratorRuntime`),
-> for instance [regenerator-runtime/runtime](https://babeljs.io/docs/usage/polyfill).
-
-First, require the polyfill at the entry point of your application
+Import the library where needed
 ```js
-await import( 'regenerator-runtime/runtime.js' ) ;
+const spec = await import('@list-abstraction/specification');
 // or
-import 'regenerator-runtime/runtime.js' ;
-```
-
-Then, import the library where needed
-```js
-const list_spec = await import( '@list-abstraction/specification' ) ;
-// or
-import * as list_spec from '@list-abstraction/specification' ;
+import * as spec from '@list-abstraction/specification';
 ```

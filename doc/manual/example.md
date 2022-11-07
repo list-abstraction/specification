@@ -4,8 +4,8 @@
 
 Currently, you can do the following to test your implementation:
 
-```javascript
-import test from 'ava' ;
-import * as spec from '@list-abstraction/specification' ;
-spec.test( test , "My list implementation" , MyListConstructor ) ;
+```js
+import ava from 'ava';
+import * as spec from '@list-abstraction/specification';
+spec.test(ava, "My list implementation", MyListConstructor);
 ```

@@ -1,11 +1,15 @@
+:notebook_with_decorative_cover:
 [@list-abstraction/specification](https://list-abstraction.github.io/specification)
 ==
 
-List ADT specification code bricks for Javascript. Parent is
+List ADT specification for Javascript. Parent is
 [js-data-structures](https://github.com/make-github-pseudonymous-again/js-data-structures).
 
 ```js
-spec.test( ava , "My list implementation" , MyListConstructor ) ;
+// eslint-disable-next-line ava/use-test
+import ava from 'ava';
+import * as spec from '@list-abstraction/specification';
+spec.test(ava, "My list implementation", MyListConstructor);
 ```
 
 [![License](https://img.shields.io/github/license/list-abstraction/specification.svg)](https://raw.githubusercontent.com/list-abstraction/specification/main/LICENSE)
