@@ -1,23 +1,23 @@
-[@aureooms/js-list-spec](https://make-github-pseudonymous-again.github.io/js-list-spec)
+[@list-abstraction/specification](https://list-abstraction.github.io/specification)
 ==
 
 List ADT specification code bricks for Javascript. Parent is
-[aureooms/js-data-structures](https://github.com/make-github-pseudonymous-again/js-data-structures).
+[js-data-structures](https://github.com/make-github-pseudonymous-again/js-data-structures).
 
 ```js
 spec.test( ava , "My list implementation" , MyListConstructor ) ;
 ```
 
-[![License](https://img.shields.io/github/license/make-github-pseudonymous-again/js-list-spec.svg)](https://raw.githubusercontent.com/make-github-pseudonymous-again/js-list-spec/main/LICENSE)
-[![Version](https://img.shields.io/npm/v/@aureooms/js-list-spec.svg)](https://www.npmjs.org/package/@aureooms/js-list-spec)
-[![Tests](https://img.shields.io/github/workflow/status/make-github-pseudonymous-again/js-list-spec/ci?event=push&label=tests)](https://github.com/make-github-pseudonymous-again/js-list-spec/actions/workflows/ci.yml?query=branch:main)
-[![Dependencies](https://img.shields.io/librariesio/github/make-github-pseudonymous-again/js-list-spec.svg)](https://github.com/make-github-pseudonymous-again/js-list-spec/network/dependencies)
-[![GitHub issues](https://img.shields.io/github/issues/make-github-pseudonymous-again/js-list-spec.svg)](https://github.com/make-github-pseudonymous-again/js-list-spec/issues)
-[![Downloads](https://img.shields.io/npm/dm/@aureooms/js-list-spec.svg)](https://www.npmjs.org/package/@aureooms/js-list-spec)
+[![License](https://img.shields.io/github/license/list-abstraction/specification.svg)](https://raw.githubusercontent.com/list-abstraction/specification/main/LICENSE)
+[![Version](https://img.shields.io/npm/v/@list-abstraction/specification.svg)](https://www.npmjs.org/package/@list-abstraction/specification)
+[![Tests](https://img.shields.io/github/workflow/status/list-abstraction/specification/ci?event=push&label=tests)](https://github.com/list-abstraction/specification/actions/workflows/ci.yml?query=branch:main)
+[![Dependencies](https://img.shields.io/librariesio/github/list-abstraction/specification.svg)](https://github.com/list-abstraction/specification/network/dependencies)
+[![GitHub issues](https://img.shields.io/github/issues/list-abstraction/specification.svg)](https://github.com/list-abstraction/specification/issues)
+[![Downloads](https://img.shields.io/npm/dm/@list-abstraction/specification.svg)](https://www.npmjs.org/package/@list-abstraction/specification)
 
-[![Code issues](https://img.shields.io/codeclimate/issues/make-github-pseudonymous-again/js-list-spec.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-list-spec/issues)
-[![Code maintainability](https://img.shields.io/codeclimate/maintainability/make-github-pseudonymous-again/js-list-spec.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-list-spec/trends/churn)
-[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/make-github-pseudonymous-again/js-list-spec/main.svg)](https://codecov.io/gh/make-github-pseudonymous-again/js-list-spec)
-[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/make-github-pseudonymous-again/js-list-spec.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-list-spec/trends/technical_debt)
-[![Documentation](https://make-github-pseudonymous-again.github.io/js-list-spec/badge.svg)](https://make-github-pseudonymous-again.github.io/js-list-spec/source.html)
-[![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-list-spec)](https://bundlephobia.com/result?p=@aureooms/js-list-spec)
+[![Code issues](https://img.shields.io/codeclimate/issues/list-abstraction/specification.svg)](https://codeclimate.com/github/list-abstraction/specification/issues)
+[![Code maintainability](https://img.shields.io/codeclimate/maintainability/list-abstraction/specification.svg)](https://codeclimate.com/github/list-abstraction/specification/trends/churn)
+[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/list-abstraction/specification/main.svg)](https://codecov.io/gh/list-abstraction/specification)
+[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/list-abstraction/specification.svg)](https://codeclimate.com/github/list-abstraction/specification/trends/technical_debt)
+[![Documentation](https://list-abstraction.github.io/specification/badge.svg)](https://list-abstraction.github.io/specification/source.html)
+[![Package size](https://img.shields.io/bundlephobia/minzip/@list-abstraction/specification)](https://bundlephobia.com/result?p=@list-abstraction/specification)

@@ -12,7 +12,7 @@ import 'regenerator-runtime/runtime.js' ;
 
 Then, import the library where needed
 ```js
-const list_spec = await import( '@aureooms/js-list-spec' ) ;
+const list_spec = await import( '@list-abstraction/specification' ) ;
 // or
-import * as list_spec from '@aureooms/js-list-spec' ;
+import * as list_spec from '@list-abstraction/specification' ;
 ```

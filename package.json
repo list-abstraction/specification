@@ -1,16 +1,16 @@
 {
-  "name": "@aureooms/js-list-spec",
+  "name": "@list-abstraction/specification",
   "description": "List ADT specification code bricks for JavaScript",
   "version": "9.0.1",
   "license": "AGPL-3.0",
-  "author": "aureooms",
-  "homepage": "https://make-github-pseudonymous-again.github.io/js-list-spec",
+  "author": "make-github-pseudonymous-again",
+  "homepage": "https://list-abstraction.github.io/specification",
   "repository": {
-    "url": "https://github.com/make-github-pseudonymous-again/js-list-spec",
+    "url": "https://github.com/list-abstraction/specification",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/make-github-pseudonymous-again/js-list-spec/issues"
+    "url": "https://github.com/list-abstraction/specification/issues"
   },
   "keywords": [
     "bricks",

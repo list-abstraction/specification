@@ -8,15 +8,15 @@ or [jspm](https://jspm.org/docs).
 
 ### yarn
 ```terminal
-yarn add @aureooms/js-list-spec
+yarn add @list-abstraction/specification
 ```
 
 ### npm
 ```terminal
-npm install @aureooms/js-list-spec --save
+npm install @list-abstraction/specification --save
 ```
 
 ### jspm
 ```terminal
-jspm install npm:@aureooms/js-list-spec
+jspm install npm:@list-abstraction/specification
 ```
