@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../">
-  <title data-ice="title">src/test.js | @aureooms/js-list-spec</title>
+  <title data-ice="title">src/test.js | @list-abstraction/specification</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="List ADT specification code bricks for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-list-spec"><meta property="twitter:description" content="List ADT specification code bricks for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="List ADT specification code bricks for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@list-abstraction/specification"><meta property="twitter:description" content="List ADT specification code bricks for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-list-spec.git"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/list-abstraction/specification"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -39,66 +39,69 @@
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">src/test.js</h1>
-<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export function test ( _test , name , List ) {
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">export function test(_test, name, List) {
+	const listToArrayForward = function (list) {
+		const array = [];
 
-	var listToArrayForward = function (list) {
-		var array = [];
+		const it = list.begin();
 
-		var it = list.begin();
+		let e;
 
-		var e;
-
-		while (!(e = it.next()).done){
+		while (!(e = it.next()).done) {
 			array.push(e.value);
 		}
 
 		return array;
-	} ;
+	};
 
-	var listToArrayBackward = function (list) {
-		var array = [];
+	const listToArrayBackward = function (list) {
+		const array = [];
 
-		var it = list.rbegin();
+		const it = list.rbegin();
 
-		var e;
+		let e;
 
-		while (!(e = it.next()).done){
+		while (!(e = it.next()).done) {
 			array.push(e.value);
 		}
 
 		return array;
-	} ;
+	};
 
-	_test( name , t =&gt; {
+	_test(name, (t) =&gt; {
+		let i;
+		let n;
+		let m;
+		let a;
+		let b;
+		let v;
+		let first;
+		let last;
 
-		var i, j, k, n, m, it, a, b, v, first, last;
+		const list = new List();
 
-		var list = new List();
+		t.deepEqual(list.length, 0, &apos;length is 0&apos;);
 
-		t.deepEqual(list.length, 0, &quot;length is 0&quot;);
+		const expectedArrayForward = [];
+		const expectedArrayBackward = [];
 
+		let arrayForward = [];
+		let arrayBackward = [];
 
-		var expectedArrayForward = [];
-		var expectedArrayBackward = [];
-
-		var arrayForward = [];
-		var arrayBackward = [];
-
-		var add20 = function(){
-
+		const add20 = function () {
 			n = 10;
 
 			for (i = 1; i &lt;= n; ++i) {
 				list.push(i);
 				expectedArrayForward.push(i);
 				expectedArrayBackward.unshift(i);
-				t.deepEqual(list.length, i, &quot;length is &quot; + i);
+				t.deepEqual(list.length, i, &apos;length is &apos; + i);
 
 				arrayForward = listToArrayForward(list);
 				arrayBackward = listToArrayBackward(list);
 
-				t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
-				t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
+				t.deepEqual(arrayForward, expectedArrayForward, &apos;content is equal&apos;);
+				t.deepEqual(arrayBackward, expectedArrayBackward, &apos;content is equal&apos;);
 			}
 
 			n = 20;
@@ -107,57 +110,55 @@
 				list.unshift(i);
 				expectedArrayForward.unshift(i);
 				expectedArrayBackward.push(i);
-				t.deepEqual(list.length, i, &quot;length is &quot; + i);
+				t.deepEqual(list.length, i, &apos;length is &apos; + i);
 
 				arrayForward = listToArrayForward(list);
 				arrayBackward = listToArrayBackward(list);
 
-				t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
-				t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
+				t.deepEqual(arrayForward, expectedArrayForward, &apos;content is equal&apos;);
+				t.deepEqual(arrayBackward, expectedArrayBackward, &apos;content is equal&apos;);
 			}
-
 		};
 
-		var del20 = function(){
-
+		const del20 = function () {
 			n = 10;
 
 			for (i = 20; i &gt; n; --i) {
-				t.deepEqual(list.length, i, &quot;length is &quot; + i);
+				t.deepEqual(list.length, i, &apos;length is &apos; + i);
 
 				v = list.pop();
 				a = expectedArrayForward.pop();
 				b = expectedArrayBackward.shift();
-				t.deepEqual(v, a, &quot;popped value a === &quot; + a);
-				t.deepEqual(v, b, &quot;popped value b === &quot; + a);
+				t.deepEqual(v, a, &apos;popped value a === &apos; + a);
+				t.deepEqual(v, b, &apos;popped value b === &apos; + a);
 
 				arrayForward = listToArrayForward(list);
 				arrayBackward = listToArrayBackward(list);
 
-				t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
-				t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
+				t.deepEqual(arrayForward, expectedArrayForward, &apos;content is equal&apos;);
+				t.deepEqual(arrayBackward, expectedArrayBackward, &apos;content is equal&apos;);
 			}
 
 			n = 0;
 
 			for (; i &gt; n; --i) {
-				t.deepEqual(list.length, i, &quot;length is &quot; + i);
+				t.deepEqual(list.length, i, &apos;length is &apos; + i);
 
 				v = list.shift();
 				a = expectedArrayForward.shift();
 				b = expectedArrayBackward.pop();
-				t.deepEqual(v, a, &quot;shifted value a === &quot; + a);
-				t.deepEqual(v, b, &quot;shifted value b === &quot; + a);
+				t.deepEqual(v, a, &apos;shifted value a === &apos; + a);
+				t.deepEqual(v, b, &apos;shifted value b === &apos; + a);
 
 				arrayForward = listToArrayForward(list);
 				arrayBackward = listToArrayBackward(list);
 
-				t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
-				t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
+				t.deepEqual(arrayForward, expectedArrayForward, &apos;content is equal&apos;);
+				t.deepEqual(arrayBackward, expectedArrayBackward, &apos;content is equal&apos;);
 			}
 		};
 
-		var clear = function(){
+		const clear = function () {
 			list.clear();
 			expectedArrayForward.splice(0);
 			expectedArrayBackward.splice(0);
@@ -167,28 +168,28 @@
 		add20();
 		del20();
 
-		t.deepEqual(list.length, 0, &quot;length is 0&quot;);
+		t.deepEqual(list.length, 0, &apos;length is 0&apos;);
 
 		v = list.shift();
-		t.deepEqual(v, null, &quot;v === null&quot;);
+		t.deepEqual(v, null, &apos;v === null&apos;);
 
 		v = list.pop();
-		t.deepEqual(v, null, &quot;v === null&quot;);
+		t.deepEqual(v, null, &apos;v === null&apos;);
 
-		t.deepEqual(list.length, 0, &quot;length is 0&quot;);
+		t.deepEqual(list.length, 0, &apos;length is 0&apos;);
 
 		clear();
 		add20();
 
 		clear();
 
-		t.deepEqual(list.length, 0, &quot;length is 0&quot;);
+		t.deepEqual(list.length, 0, &apos;length is 0&apos;);
 
 		arrayForward = listToArrayForward(list);
 		arrayBackward = listToArrayBackward(list);
 
-		t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
-		t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
+		t.deepEqual(arrayForward, expectedArrayForward, &apos;content is equal&apos;);
+		t.deepEqual(arrayBackward, expectedArrayBackward, &apos;content is equal&apos;);
 
 		clear();
 		add20();
@@ -201,13 +202,13 @@
 		expectedArrayForward.splice(0);
 		expectedArrayBackward.splice(0);
 
-		t.deepEqual(list.length, 0, &quot;length is 0&quot;);
+		t.deepEqual(list.length, 0, &apos;length is 0&apos;);
 
 		arrayForward = listToArrayForward(list);
 		arrayBackward = listToArrayBackward(list);
 
-		t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
-		t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
+		t.deepEqual(arrayForward, expectedArrayForward, &apos;content is equal&apos;);
+		t.deepEqual(arrayBackward, expectedArrayBackward, &apos;content is equal&apos;);
 
 		clear();
 		add20();
@@ -220,14 +221,13 @@
 		expectedArrayForward.splice(0);
 		expectedArrayBackward.splice(0);
 
-		t.deepEqual(list.length, 0, &quot;length is 0&quot;);
+		t.deepEqual(list.length, 0, &apos;length is 0&apos;);
 
 		arrayForward = listToArrayForward(list);
 		arrayBackward = listToArrayBackward(list);
 
-		t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
-		t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
-
+		t.deepEqual(arrayForward, expectedArrayForward, &apos;content is equal&apos;);
+		t.deepEqual(arrayBackward, expectedArrayBackward, &apos;content is equal&apos;);
 
 		clear();
 		add20();
@@ -246,14 +246,14 @@
 		expectedArrayForward.splice(m, n - m - m);
 		expectedArrayBackward.splice(m, n - m - m);
 
-		t.deepEqual(list.length, expectedArrayForward.length, &quot;length check&quot;);
-		t.deepEqual(list.length, expectedArrayBackward.length, &quot;length check&quot;);
+		t.deepEqual(list.length, expectedArrayForward.length, &apos;length check&apos;);
+		t.deepEqual(list.length, expectedArrayBackward.length, &apos;length check&apos;);
 
 		arrayForward = listToArrayForward(list);
 		arrayBackward = listToArrayBackward(list);
 
-		t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
-		t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
+		t.deepEqual(arrayForward, expectedArrayForward, &apos;content is equal&apos;);
+		t.deepEqual(arrayBackward, expectedArrayBackward, &apos;content is equal&apos;);
 
 		clear();
 		add20();
@@ -272,16 +272,15 @@
 		expectedArrayForward.splice(m, n - m - m);
 		expectedArrayBackward.splice(m, n - m - m);
 
-		t.deepEqual(list.length, expectedArrayForward.length, &quot;length check&quot;);
-		t.deepEqual(list.length, expectedArrayBackward.length, &quot;length check&quot;);
+		t.deepEqual(list.length, expectedArrayForward.length, &apos;length check&apos;);
+		t.deepEqual(list.length, expectedArrayBackward.length, &apos;length check&apos;);
 
 		arrayForward = listToArrayForward(list);
 		arrayBackward = listToArrayBackward(list);
 
-		t.deepEqual(arrayForward, expectedArrayForward, &quot;content is equal&quot;);
-		t.deepEqual(arrayBackward, expectedArrayBackward, &quot;content is equal&quot;);
+		t.deepEqual(arrayForward, expectedArrayForward, &apos;content is equal&apos;);
+		t.deepEqual(arrayBackward, expectedArrayBackward, &apos;content is equal&apos;);
 	});
-
 }
 </code></pre>
 

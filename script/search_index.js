@@ -1,32 +1,32 @@
 window.esdocSearchIndex = [
   [
-    "@aureooms/js-list-spec/src/testlist.js~iterator",
+    "@list-abstraction/specification/src/testlist.js~iterator",
     "function/index.html#static-function-Iterator",
-    "<span>Iterator</span> <span class=\"search-result-import-path\">@aureooms/js-list-spec/src/TestList.js</span>",
+    "<span>Iterator</span> <span class=\"search-result-import-path\">@list-abstraction/specification/src/TestList.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-list-spec/src/testlist.js~node",
+    "@list-abstraction/specification/src/testlist.js~node",
     "function/index.html#static-function-Node",
-    "<span>Node</span> <span class=\"search-result-import-path\">@aureooms/js-list-spec/src/TestList.js</span>",
+    "<span>Node</span> <span class=\"search-result-import-path\">@list-abstraction/specification/src/TestList.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-list-spec/src/testlist.js~reverseiterator",
+    "@list-abstraction/specification/src/testlist.js~reverseiterator",
     "function/index.html#static-function-ReverseIterator",
-    "<span>ReverseIterator</span> <span class=\"search-result-import-path\">@aureooms/js-list-spec/src/TestList.js</span>",
+    "<span>ReverseIterator</span> <span class=\"search-result-import-path\">@list-abstraction/specification/src/TestList.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-list-spec/src/testlist.js~testlist",
+    "@list-abstraction/specification/src/testlist.js~testlist",
     "function/index.html#static-function-TestList",
-    "<span>TestList</span> <span class=\"search-result-import-path\">@aureooms/js-list-spec/src/TestList.js</span>",
+    "<span>TestList</span> <span class=\"search-result-import-path\">@list-abstraction/specification/src/TestList.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-list-spec/src/test.js~test",
+    "@list-abstraction/specification/src/test.js~test",
     "function/index.html#static-function-test",
-    "<span>test</span> <span class=\"search-result-import-path\">@aureooms/js-list-spec/src/test.js</span>",
+    "<span>test</span> <span class=\"search-result-import-path\">@list-abstraction/specification/src/test.js</span>",
     "function"
   ],
   [
