@@ -52,7 +52,8 @@
     "esdoc-standard-plugin": "1.0.0",
     "fixpack": "4.0.0",
     "np": "6.2.3",
-    "power-assert": "1.6.1"
+    "power-assert": "1.6.1",
+    "xo": "0.52.4"
   },
   "ava": {
     "files": [
