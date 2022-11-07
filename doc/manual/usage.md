@@ -5,14 +5,14 @@
 
 First, require the polyfill at the entry point of your application
 ```js
-require( 'regenerator-runtime/runtime' ) ;
+await import( 'regenerator-runtime/runtime.js' ) ;
 // or
 import 'regenerator-runtime/runtime.js' ;
 ```
 
 Then, import the library where needed
 ```js
-const list_spec = require( '@aureooms/js-list-spec' ) ;
+const list_spec = await import( '@aureooms/js-list-spec' ) ;
 // or
 import * as list_spec from '@aureooms/js-list-spec' ;
 ```
