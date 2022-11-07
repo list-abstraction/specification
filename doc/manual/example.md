@@ -1,6 +1,6 @@
 # Examples
 
-> More examples in [the test files](https://github.com/make-github-pseudonymous-again/js-list-spec/tree/master/test/src).
+> More examples in [the test files](https://github.com/make-github-pseudonymous-again/js-list-spec/tree/main/test/src).
 
 Currently, you can do the following to test your implementation:
 
