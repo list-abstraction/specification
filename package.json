@@ -60,7 +60,7 @@
   "license": "AGPL-3.0",
   "main": "lib/index.js",
   "repository": {
-    "url": "https://github.com/make-github-pseudonymous-again/js-list-spec.git",
+    "url": "https://github.com/make-github-pseudonymous-again/js-list-spec",
     "type": "git"
   },
   "scripts": {
