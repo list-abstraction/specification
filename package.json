@@ -2,7 +2,54 @@
   "name": "@aureooms/js-list-spec",
   "description": "List ADT specification code bricks for JavaScript",
   "version": "9.0.1",
+  "license": "AGPL-3.0",
   "author": "aureooms",
+  "homepage": "https://make-github-pseudonymous-again.github.io/js-list-spec",
+  "repository": {
+    "url": "https://github.com/make-github-pseudonymous-again/js-list-spec",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/make-github-pseudonymous-again/js-list-spec/issues"
+  },
+  "keywords": [
+    "bricks",
+    "javascript",
+    "js",
+    "list",
+    "specification"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rm -rf lib && babel src -d lib",
+    "cover": "nyc --reporter=lcov npm test",
+    "esdoc": "esdoc",
+    "lint-config": "fixpack --dryRun",
+    "lint-config-and-fix": "fixpack || fixpack",
+    "prepare": "npm run build",
+    "release": "np",
+    "test": "ava"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "7.8.4",
+    "@babel/core": "7.9.0",
+    "@babel/polyfill": "7.8.7",
+    "@babel/preset-env": "7.9.5",
+    "@babel/register": "7.9.0",
+    "ava": "3.8.1",
+    "coveralls": "3.1.0",
+    "esdoc": "1.1.0",
+    "esdoc-inject-script-plugin": "1.0.0",
+    "esdoc-inject-style-plugin": "1.0.0",
+    "esdoc-standard-plugin": "1.0.0",
+    "fixpack": "4.0.0",
+    "np": "6.2.3",
+    "nyc": "15.0.1"
+  },
   "ava": {
     "files": [
       "test/src/**/*"
@@ -25,52 +72,5 @@
         "sourceMaps": "inline"
       }
     }
-  },
-  "bugs": {
-    "url": "https://github.com/make-github-pseudonymous-again/js-list-spec/issues"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "@babel/cli": "7.8.4",
-    "@babel/core": "7.9.0",
-    "@babel/polyfill": "7.8.7",
-    "@babel/preset-env": "7.9.5",
-    "@babel/register": "7.9.0",
-    "ava": "3.8.1",
-    "coveralls": "3.1.0",
-    "esdoc": "1.1.0",
-    "esdoc-inject-script-plugin": "1.0.0",
-    "esdoc-inject-style-plugin": "1.0.0",
-    "esdoc-standard-plugin": "1.0.0",
-    "np": "6.2.3",
-    "nyc": "15.0.1",
-    "fixpack": "4.0.0"
-  },
-  "files": [
-    "lib"
-  ],
-  "homepage": "https://make-github-pseudonymous-again.github.io/js-list-spec",
-  "keywords": [
-    "bricks",
-    "javascript",
-    "js",
-    "list",
-    "specification"
-  ],
-  "license": "AGPL-3.0",
-  "main": "lib/index.js",
-  "repository": {
-    "url": "https://github.com/make-github-pseudonymous-again/js-list-spec",
-    "type": "git"
-  },
-  "scripts": {
-    "build": "rm -rf lib && babel src -d lib",
-    "cover": "nyc --reporter=lcov npm test",
-    "esdoc": "esdoc",
-    "prepare": "npm run build",
-    "release": "np",
-    "test": "ava",
-    "lint-config-and-fix": "fixpack || fixpack",
-    "lint-config": "fixpack --dryRun"
   }
 }
