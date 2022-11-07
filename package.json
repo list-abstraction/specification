@@ -50,7 +50,8 @@
     "esdoc-inject-style-plugin": "1.0.0",
     "esdoc-standard-plugin": "1.0.0",
     "fixpack": "4.0.0",
-    "np": "6.2.3"
+    "np": "6.2.3",
+    "power-assert": "1.6.1"
   },
   "ava": {
     "files": [
