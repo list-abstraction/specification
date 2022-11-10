@@ -1,4 +1,4 @@
-export function test(_test, name, List) {
+export default function test(_test, name, List) {
 	const listToArrayForward = function (list) {
 		const array = [];
 

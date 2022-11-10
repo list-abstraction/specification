@@ -2,4 +2,4 @@
 import ava from 'ava';
 import * as spec from '#module';
 
-spec.test(ava, 'TestList', spec.TestList);
+spec.test(ava, 'List', spec.List);
