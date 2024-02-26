@@ -1,5 +1,5 @@
-import Node from './Node.js';
 import Iterator from './Iterator.js';
+import Node from './Node.js';
 import ReverseIterator from './ReverseIterator.js';
 
 export default class List {
@@ -121,7 +121,7 @@ export default class List {
 	}
 
 	end() {
-		return this.iterator(this.array[this.array.length - 1]);
+		return this.iterator(this.array.at(-1));
 	}
 
 	rbegin() {

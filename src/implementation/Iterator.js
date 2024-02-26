@@ -1,4 +1,5 @@
 import assert from 'assert';
+
 import Node from './Node.js';
 
 export default class Iterator {
@@ -19,7 +20,7 @@ export default class Iterator {
 	next() {
 		const i = this.array.indexOf(this.current);
 		this.current = this.array[i + 1];
-		if (this.current === this.array[this.array.length - 1]) {
+		if (this.current === this.array.at(-1)) {
 			return {done: true};
 		}
 
