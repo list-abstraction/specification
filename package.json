@@ -113,7 +113,6 @@
   "babel": {
     "sourceMaps": true,
     "plugins": [
-      "@babel/plugin-proposal-async-generator-functions",
       [
         "transform-remove-console",
         {
